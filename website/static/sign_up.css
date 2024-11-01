@@ -1,0 +1,138 @@
+/* Reset default styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+  }
+  
+  .container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  .signup-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 550px;
+    max-width: 1000px; /* Increased from 400px to 500px */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+  .signup-box h2 {
+    color: #ff0000;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0000;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-button:hover {
+    background-color: #e60000;
+  }
+  
+  /* Link styling for redirect */
+  .redirect {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .redirect:hover {
+    color: #e60000;
+    text-decoration: underline;
+  }
+  
+  .flash-messages {
+    width: 550px ;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+  }
+  
+  .alert {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  .alert-dismissible {
+    padding-right: 40px;
+  }
+  
+  .alert .close {
+    position: centre;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 5px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
+  }
+  
+  .fade {
+    opacity: 0;
+    transition: opacity 0.15s linear;
+  }
+  
+  .fade.show {
+    opacity: 1;
+  }
