@@ -25,9 +25,22 @@ def generateUID():
 
 @auth.route('/login', methods = ['GET', 'POST'])
 def login(): 
-    data = request.form 
-    print(data)
-    return render_template("login.html", text = "nigga") 
+    if request.method == 'POST': 
+        email = request.form.get('email') 
+        password = request.form.get('password')
+
+        user = User.query.filter_by(email_id = email).first() 
+        if user: 
+            if check_password_hash(user.password, password): 
+                flash('Logged in successfully!', category='success')
+            else: 
+                flash( 'Incorrect password , try again.', category='error')
+        else: 
+            flash("the email does exist", category='error')
+    
+    
+    
+    return render_template("login.html") 
 
 
 @auth.route('/logout')

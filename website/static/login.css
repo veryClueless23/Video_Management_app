@@ -1,3 +1,4 @@
+/* Reset default styling */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,18 +15,21 @@ body {
 }
 
 .container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
 }
 
 .login-box {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
+  width: 400px;
   padding: 20px;
   text-align: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -34,6 +38,49 @@ body {
 .login-box h2 {
   color: #ff0000;
   margin-bottom: 20px;
+}
+
+/* Flash Messages */
+.flash-messages {
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: relative;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-dismissible {
+  padding-right: 40px;
+}
+
+.alert .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
 }
 
 .input-group {
@@ -70,4 +117,17 @@ body {
 
 .login-button:hover {
   background-color: #e60000;
+}
+
+.redirect {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redirect:hover {
+  color: #e60000;
+  text-decoration: underline;
 }

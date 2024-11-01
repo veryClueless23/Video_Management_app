@@ -8,21 +8,52 @@
 </head>
 <body>
   <div class="container">
+    <!-- Flash Messages -->
+    <div class="flash-messages">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+
+    <!-- Login Box -->
     <div class="login-box">
       <h2>Login</h2>
       <form id="loginForm" action="/login" method="POST">
         <div class="input-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required>
         </div>
         <div class="input-group">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" required>
         </div>
         <button type="submit" class="login-button">Login</button>
-      </form> 
-      <a class = "redirect" href="/sign_up">dont have an account?Sign Up!</a>
+      </form>
+      <a class="redirect" href="/sign_up">Don't have an account? Sign Up!</a>
     </div>
-  </div> 
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('[data-dismiss="alert"]').forEach(button => {
+        button.addEventListener('click', function() {
+          const alert = this.closest('.alert');
+          alert.style.opacity = '0';
+          setTimeout(() => {
+            alert.style.display = 'none';
+          }, 150);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
